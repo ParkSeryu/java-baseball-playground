@@ -24,6 +24,10 @@ public class Player {
         }
     }
 
+    public List<Integer> getNumberList() {
+        return numberList;
+    }
+
     private void addNumberInList(boolean isValid, int inputNumber) {
         if (isValid) {
             numberList.add(inputNumber);

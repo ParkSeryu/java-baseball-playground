@@ -18,9 +18,9 @@ class PlayerTest {
     @Disabled
     @DisplayName("사용자 숫자가 잘 생성되는지 확인한다.")
     @Test
-    void createPlayerListTest() {
+    void getNumberListTest() {
         // given
-        player.createPlayerList();
+
 
         // when
 
