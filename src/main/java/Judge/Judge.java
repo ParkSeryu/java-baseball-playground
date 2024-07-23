@@ -1,15 +1,22 @@
 package judge;
 
 import java.util.List;
+import ui.OutputResultView;
 
 public class Judge {
     private int strike;
     private int ball;
+    private final OutputResultView outputResultView;
 
-    public void gameStart(List<Integer> playerList, List<Integer> computerList) {
+    public Judge(OutputResultView outputResultView) {
+        this.outputResultView = outputResultView;
+    }
+
+    public void judgeStart(List<Integer> playerList, List<Integer> computerList) {
         for (int i = 0; i < computerList.size(); i++) {
             judging(computerList.get(i), i, playerList);
         }
+        outputResultView.tellCount(strike, ball);
     }
 
     public void judging(int computerEach, int index, List<Integer> playerList) {
@@ -27,6 +34,7 @@ public class Judge {
             return;
         }
         ball++;
+
     }
 
     public int getStrike() {

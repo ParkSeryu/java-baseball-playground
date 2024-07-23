@@ -1,23 +1,22 @@
 package judge;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.in;
-import static org.junit.jupiter.api.Assertions.*;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import ui.OutputResultView;
 
 class JudgeTest {
 
     private Judge judge;
+    private OutputResultView outputResultView;
 
     @BeforeEach
     void setUp() {
-        judge = new Judge();
+        judge = new Judge(outputResultView);
     }
 
     @DisplayName("같은 index에 있는 값이 같으면 strike 카운트가 올라단다.")
@@ -92,7 +91,7 @@ class JudgeTest {
         List<Integer> comList = Arrays.asList(4, 2, 5);
 
         // when
-        judge.gameStart(playerList, comList);
+        judge.judgeStart(playerList, comList);
 
         // then
         assertThat(judge.getStrike()).isEqualTo(3);
@@ -107,7 +106,7 @@ class JudgeTest {
         List<Integer> comList = Arrays.asList(4, 2, 6);
 
         // when
-        judge.gameStart(playerList, comList);
+        judge.judgeStart(playerList, comList);
 
         // then
         assertThat(judge.getStrike()).isEqualTo(2);
@@ -122,7 +121,7 @@ class JudgeTest {
         List<Integer> comList = Arrays.asList(5, 4, 2);
 
         // when
-        judge.gameStart(playerList, comList);
+        judge.judgeStart(playerList, comList);
 
         // then
         assertThat(judge.getStrike()).isEqualTo(0);
@@ -137,7 +136,7 @@ class JudgeTest {
         List<Integer> comList = Arrays.asList(6, 8, 9);
 
         // when
-        judge.gameStart(playerList, comList);
+        judge.judgeStart(playerList, comList);
 
         // then
         assertThat(judge.getStrike()).isEqualTo(0);
