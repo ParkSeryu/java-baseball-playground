@@ -20,7 +20,7 @@ class ValidatorTest {
         list.add(5);
 
         // when
-        boolean duplicatedNumberIsExist = validator.isDuplicatedNumberIsExist(list, 3);
+        boolean duplicatedNumberIsExist = validator.isValid(list, 3);
 
         // then
         assertThat(duplicatedNumberIsExist).isTrue();

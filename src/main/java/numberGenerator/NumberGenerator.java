@@ -27,7 +27,7 @@ public class NumberGenerator {
     }
 
     private boolean checkValid(int number) {
-        return validator.isDuplicatedNumberIsExist(list, number);
+        return validator.isValid(list, number);
     }
 
     private void addList(boolean flag, int num) {
