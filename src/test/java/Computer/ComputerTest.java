@@ -1,4 +1,4 @@
-package Computer;
+package computer;
 
 import static org.junit.jupiter.api.Assertions.*;
 
