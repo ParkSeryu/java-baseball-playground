@@ -3,7 +3,6 @@ package numberGenerator;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import common.Validator;
-import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -19,10 +18,10 @@ class NumberGeneratorTest {
 
     @DisplayName("새로운 리스트가 생성된다.")
     @Test
-    void initTest() {
+    void createListTest() {
         // given
         // when
-        List<Integer> initList = numberGenerator.init();
+        List<Integer> initList = numberGenerator.createList();
 
         // then
         assertThat(initList.size()).isEqualTo(3);
