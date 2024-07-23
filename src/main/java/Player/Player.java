@@ -16,9 +16,11 @@ public class Player {
     }
 
     public void createPlayerList() {
-        while (numberList.size() < 3) {
-            inputView.printPromptMsg();
-            int inputNumber = inputView.getScannerNumber();
+        inputView.printPromptMsg();
+        numberList.clear();
+        String scannerNumber = inputView.getScannerNumber();
+        for (int i = 0; i < scannerNumber.length(); i++) {
+            int inputNumber = scannerNumber.charAt(i) - '0';
             boolean isValid = validator.isValid(numberList, inputNumber);
             addNumberInList(isValid, inputNumber);
         }
@@ -29,7 +31,7 @@ public class Player {
     }
 
     private void addNumberInList(boolean isValid, int inputNumber) {
-        if (isValid) {
+        if (!isValid) {
             numberList.add(inputNumber);
         }
     }

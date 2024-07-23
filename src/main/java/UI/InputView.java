@@ -11,8 +11,8 @@ public class InputView {
         System.out.println(msg);
     }
 
-    public int getScannerNumber(){
-        return scanner.nextInt();
+    public String getScannerNumber(){
+        return scanner.nextLine();
     }
 
 }

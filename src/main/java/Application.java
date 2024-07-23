@@ -18,10 +18,16 @@ public class Application {
         NumberGenerator numberGenerator = new NumberGenerator(validator);
         Judge judge = new Judge(outputResultView);
         Computer computer = new Computer(numberGenerator.createList());
+        System.out.println(computer.getNumberList());
         Player player = new Player(inputView, validator);
         while (judge.getStrike() != 3) {
             player.createPlayerList();
             judge.judgeStart(player.getNumberList(), computer.getNumberList());
+        }
+        outputResultView.tellGameFinished();
+        int i = outputResultView.tellGameRestarted();
+        if (i == 1) {
+            start(inputView, outputResultView, validator);
         }
     }
 }
