@@ -13,7 +13,7 @@ public class NumberGenerator {
         this.validator = validator;
     }
 
-    public List<Integer> init() {
+    public List<Integer> createList() {
         while (list.size() < 3) {
             int num = createNumber();
             boolean flag = checkValid(num);
