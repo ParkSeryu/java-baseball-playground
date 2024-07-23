@@ -2,8 +2,10 @@ package ui;
 
 public class InputView {
 
-    public void printPromptMsg(){
-        System.out.println("숫자를 입력 해 주세요 :");
+    public static final String msg = "숫자를 입력 해 주세요 :";
+
+    public void printPromptMsg() {
+        System.out.println(msg);
     }
 
 }
